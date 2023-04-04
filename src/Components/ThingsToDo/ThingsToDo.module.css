@@ -1,48 +1,61 @@
 .outer {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
-@media (min-width: 1024px)
-{
+@media (min-width: 1024px) {
   .outer {
     /* padding: 0 24px; */
+    margin-top: 52px;
+    margin-bottom: 52px;
   }
 }
 
-@media (min-width: 1184px)
-{
+@media (min-width: 1184px) {
   .outer {
     /* padding: 0 24px; */
+    margin-top: 52px;
+    margin-bottom: 52px;
     box-sizing: border-box;
-    margin: auto;
+    /* margin: auto; */
     max-width: 100%;
     width: calc(1136px + 0px * 2);
   }
 }
 
-@media (max-width: 768px)
-{
+@media (max-width: 768px) {
   .outer {
     width: 768px;
     /* padding: 0 10px; */
+    margin-top: 52px;
+    margin-bottom: 52px;
   }
 }
 
-.outer>p {
-    margin: -15px 0 10px 0;
+.outer > p {
+  margin: -15px 0 10px 0;
 }
 .container {
-    display: flex;
-    gap: 23px;
-    overflow-y: scroll;
+  margin-top: 32px;
+  display: flex;
+  gap: 23px;
+  overflow-y: scroll;
 }
 
 .container::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 
+.container .box {
+  min-width: 23%;
+}
 
-.container .box{
-    min-width: 23%;
+.slideText {
+  color: white;
+  position: absolute;
+  font-weight: bold;
+  font-size: 28px;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
 }

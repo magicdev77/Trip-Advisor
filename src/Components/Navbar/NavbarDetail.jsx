@@ -42,8 +42,8 @@ const NavbarDetail = () => {
     <div className={styles.container}>
       {data
         .filter((el, i) => i < data.length)
-        .map((el) => (
-          <NavbarDetailCard {...el} />
+        .map((el, index) => (
+          <NavbarDetailCard key={index} {...el} />
         ))}
       <div style={{ position: 'relative' }}>
         <div className={styles.dropdown}>

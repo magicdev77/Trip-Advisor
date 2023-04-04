@@ -9,26 +9,45 @@ import ThingsToDo from "../Components/ThingsToDo/ThingsToDo";
 import Header from "../Components/Header";
 import img1 from "../Components/tripadvisor.png";
 import NextTrip from "../Components/NextTrip/NextTrip";
-import { AuthContext } from "../Context/AuthContext/AuthContext";
+// import { AuthContext } from "../Context/AuthContext/AuthContext";
 
-import React, { useEffect, useContext } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+// import axios from "axios";
 import { useState } from "react";
 // import { SearchContext } from "../Context/SearchContext/SearchContext";
 // import { Center } from "@chakra-ui/react";
 
-let search = "lucknow";
+// let search = "lucknow";
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  const { token, setToken } = useContext(AuthContext);
+  const [toGoData, setToGoData] = useState([]);
+  const [topDestinationData, setTopDestinationData] = useState([]);
+  // const { token, setToken } = useContext(AuthContext);
 
-  console.log(token, setToken);
+  // console.log(token, setToken);
 
   useEffect(() => {
-    axios
-      .get(`https://my-jsih.herokuapp.com/destinations`)
-      .then((res) => setData(res.data[search]));
+    fetch(
+      "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/togo_places?api_key=keygOr5J1ZXJgFqmu"
+    )
+      .then((res) => res.json())
+      .then((rows) => {
+        setToGoData(rows.records);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch(
+      "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/top_destinations?api_key=keygOr5J1ZXJgFqmu"
+    )
+      .then((res) => res.json())
+      .then((rows) => {
+        setTopDestinationData(rows.records);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -37,10 +56,10 @@ const Home = () => {
       <main>
         <NavbarDetail />
         <Search />
-        <ThingsToDo data={data} />
+        <ThingsToDo data={toGoData} />
         <NextTrip />
         <MoreToExplore />
-        <TopDestinations />
+        <TopDestinations data={topDestinationData} />
         <img src={img1} style={{ width: "100%" }} />
         {/* <Trending /> */}
       </main>
