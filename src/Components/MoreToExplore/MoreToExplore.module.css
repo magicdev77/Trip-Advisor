@@ -1,6 +1,7 @@
 .mainContainer {
     background-color: #FAF1ED;
     padding: 15px 0 10px 0;
+    margin-bottom: 80px;
 }
 
 .subContainer {
@@ -19,7 +20,7 @@
 }
 
 .box {
-    min-width: 33%;
+    min-width: 30%;
     min-height: 100%;
     background-color: white;
 }
@@ -75,7 +76,7 @@
   .subContainer {
     /* padding: 0 24px; */
     box-sizing: border-box;
-    margin: auto;
+    /* margin: auto; */
     max-width: 100%;
     width: calc(1136px + 0px * 2);
   }
@@ -84,7 +85,25 @@
 @media (max-width: 768px)
 {
   .subContainer {
-    width: 768px;
+    /* width: 768px; */
     /* padding: 0 10px; */
   }
 }
+
+.heartBtn {
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
+    transition: 0.2s;
+    border-radius: 50%;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+    padding: 10px 10px 5px 11px
+  }
+  
+  .heartBtn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: 0.2s;
+  }

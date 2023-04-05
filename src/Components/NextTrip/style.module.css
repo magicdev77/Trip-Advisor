@@ -40,10 +40,34 @@
   transition: 0.2s;
 }
 
-@media (min-width: 1024px)
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.nextTripTop {
+  display: block;
+}
+
+.nextTripBottom {
+  display: none;
+}
+
+.leftTextBox {
+  width: 50%;
+}
+
+@media (max-width: 1024px)
 {
   .container {
     padding: 0px 0px;
+  }
+  .nextTripTop {
+    display: none;
+  }
+  .nextTripBottom {
+    display: table;
+    margin: auto;
   }
 }
 
@@ -62,7 +86,15 @@
 @media (max-width: 768px)
 {
   .container {
-    width: 768px;
+    /* width: 768px; */
     padding: 0 10px;
+  }
+}
+@media (max-width: 900px) {
+  .rightTextBox {
+    width: 100%;
+  }
+  .leftTextBox {
+    width: 100%
   }
 }

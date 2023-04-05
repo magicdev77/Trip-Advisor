@@ -7,6 +7,7 @@ const Search = () => {
   const { search, setSearch } = useContext(SearchContext);
 
   console.log(search);
+
   return (
     <div className={styles.container}>
       <img

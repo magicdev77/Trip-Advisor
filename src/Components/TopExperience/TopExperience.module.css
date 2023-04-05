@@ -1,0 +1,144 @@
+.outer {
+  width: 90%;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.box {
+  min-width: 33%;
+
+  position: relative;
+}
+
+.box > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.box > img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.box > div {
+  padding-left: 20px;
+  line-height: 2.2em;
+}
+
+.box > div > p {
+  padding-bottom: 20px;
+  font-size: 2vw;
+  font-weight: 700;
+  text-shadow: 10px 10px 50px #000000;
+  color: white;
+  position: absolute;
+  transform: translateY(-100%);
+}
+
+@media (min-width: 1024px) {
+  .outer {
+    /* padding: 0 24px; */
+  }
+}
+
+@media (min-width: 1184px) {
+  .outer {
+    padding: 0 24px;
+    box-sizing: border-box;
+    /* margin: auto; */
+    margin-bottom: 80px;
+    max-width: 100%;
+    padding: 0 24px;
+    width: calc(1136px + 24px * 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .outer {
+    /* width: 768px; */
+    /* padding: 0 10px; */
+  }
+}
+
+.slideText {
+  margin: 5px 0;
+  color: black;
+  /* position: absolute; */
+  font-weight: bold;
+  font-size: 16px;
+  bottom: 10px;
+  z-index: 2;
+}
+
+.swiperItemImg {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.swiperItemImg:hover {
+  transition: 0.2s;
+  opacity: 0.8;
+}
+
+.heartBtn {
+  color: black;
+  background-color: rgba(255, 255, 255, 1);
+  transition: 0.2s;
+  border-radius: 50%;
+  font-size: 18px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1;
+  padding: 10px 10px 5px 11px
+}
+
+.heartBtn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.2s;
+}
+
+.cMark{
+  position: absolute;
+  /* left: ; */
+}
+
+.recommendBtn {
+  color: black;
+  margin: 3px 0px;
+  font-size: 12px;
+  padding: 1px 3px 2px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 4px;  
+  width: max-content;
+}
+
+.rateMask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  opacity: 0;
+}
+
+.rateText {
+  font-size: 12px;
+  padding: 4px 5px 0;
+}
+
+.rateArea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

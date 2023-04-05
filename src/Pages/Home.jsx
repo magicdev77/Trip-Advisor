@@ -9,6 +9,7 @@ import ThingsToDo from "../Components/ThingsToDo/ThingsToDo";
 import Header from "../Components/Header";
 import img1 from "../Components/tripadvisor.png";
 import NextTrip from "../Components/NextTrip/NextTrip";
+import TopExperience from "../Components/TopExperience/TopExperience";
 // import { AuthContext } from "../Context/AuthContext/AuthContext";
 
 import React, { useEffect } from "react";
@@ -22,13 +23,14 @@ import { useState } from "react";
 const Home = () => {
   const [toGoData, setToGoData] = useState([]);
   const [topDestinationData, setTopDestinationData] = useState([]);
+  const [topExperienceData, seetTopExperienceData] = useState([]);
   // const { token, setToken } = useContext(AuthContext);
 
   // console.log(token, setToken);
 
   useEffect(() => {
     fetch(
-      "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/togo_places?api_key=keygOr5J1ZXJgFqmu"
+      "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/togo_places?api_key=key7diInu3GgCLrlb"
     )
       .then((res) => res.json())
       .then((rows) => {
@@ -39,7 +41,7 @@ const Home = () => {
       });
 
     fetch(
-      "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/top_destinations?api_key=keygOr5J1ZXJgFqmu"
+      "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/top_destinations?api_key=key7diInu3GgCLrlb"
     )
       .then((res) => res.json())
       .then((rows) => {
@@ -48,6 +50,17 @@ const Home = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    fetch(
+        "https://api.airtable.com/v0/appr5GAnGqfUeqMQc/top_experience?api_key=key7diInu3GgCLrlb"
+      )
+        .then((res) => res.json())
+        .then((rows) => {
+          seetTopExperienceData(rows.records);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
   }, []);
 
   return (
@@ -57,11 +70,11 @@ const Home = () => {
         <NavbarDetail />
         <Search />
         <ThingsToDo data={toGoData} />
+        <TopExperience data={topExperienceData} />
         <NextTrip />
         <MoreToExplore />
         <TopDestinations data={topDestinationData} />
         <img src={img1} style={{ width: "100%" }} />
-        {/* <Trending /> */}
       </main>
       <Footer />
     </>

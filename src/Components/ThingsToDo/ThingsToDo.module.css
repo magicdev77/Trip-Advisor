@@ -5,19 +5,16 @@
 
 @media (min-width: 1024px) {
   .outer {
-    /* padding: 0 24px; */
-    margin-top: 52px;
-    margin-bottom: 52px;
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 }
 
 @media (min-width: 1184px) {
   .outer {
-    /* padding: 0 24px; */
-    margin-top: 52px;
-    margin-bottom: 52px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     box-sizing: border-box;
-    /* margin: auto; */
     max-width: 100%;
     width: calc(1136px + 0px * 2);
   }
@@ -25,10 +22,9 @@
 
 @media (max-width: 768px) {
   .outer {
-    width: 768px;
-    /* padding: 0 10px; */
-    margin-top: 52px;
-    margin-bottom: 52px;
+    /* width: 768px; */
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 }
 

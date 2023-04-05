@@ -2,6 +2,18 @@
   background-color: #faf1ed;
 }
 
+.Container > div:first-child {
+  width: 60%;
+}
+
+.Container > div:last-child {
+  width: 40%;
+}
+
+.Container {
+  width: 90%;
+}
+
 @media (min-width: 1024px)
 {
   .Container {
@@ -11,20 +23,50 @@
 
 @media (min-width: 1184px)
 {
+  .Container{
+    width: calc(1136px + 24px * 2);
+    margin: auto;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (max-width: 1184px)
+{
   .Container {
     /* padding: 0 24px; */
     box-sizing: border-box;
     margin: auto;
     max-width: 100%;
+    flex-wrap: wrap;
     /* padding: 0 24px; */
-    width: calc(1136px + 24px * 2);
+  }
+
+  .Container > div:first-child {
+    width: 100%;
+  }
+  
+  .Container > div:last-child {
+    width: 100%;
+  }
+
+  .Container {
+    padding-top: 0 !important;
+  }
+
+  .Container:last-child > div:last-child {
+    padding-top: 20px;
+  }
+
+  .Container:last-child > div:first-child > div {
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px)
 {
   .Container {
-    width: 768px;
+    /* width: 768px; */
     padding: 0 10px;
   }
 }
@@ -36,19 +78,11 @@
   line-height: 0.9em;
   padding: 30px 0px;
 }
-.Container > div:nth-child(1) {
-  width: 65%;
+
+.Container li{
+  line-height: 25px;
 }
-.Container > div:nth-child(2) {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 30px;
-  gap: 20px;
-}
-.Container > div > div {
-  display: flex;
-  align-items: flex-start;
-}
+
 
 .logo {
   width: 80%;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavbarTop.module.css";
@@ -23,17 +24,17 @@ const Header = () => {
       <div>
         <div>
           <Link to="#" style={{ textDecoration: "none", color: "black" }}>
-            <BiPencil /> Review
+            <BiPencil /> <span className={styles.navText}>Review</span>
           </Link>
         </div>
         <div>
           <Link to="#" style={{ textDecoration: "none", color: "black" }}>
-            <BiHeart /> Trips
+            <BiHeart /> <span className={styles.navText}>Trips</span>
           </Link>
         </div>
         <div>
           <Link to="#" style={{ textDecoration: "none", color: "black" }}>
-            <BiBell /> Alerts
+            <BiBell /> <span className={styles.navText}>Alerts</span>
           </Link>
         </div>
         <div>
@@ -42,17 +43,16 @@ const Header = () => {
               {token}
             </p>
           ) : (
-            <Link
-              to="/login"
+            <a
               style={{ textDecoration: "none", color: "white" }}
             >
               Sign in
-            </Link>
+            </a>
           )}
         </div>
         <div>
           <Link to="#" style={{ textDecoration: "none", color: "black" }}>
-            <MdOutlineShoppingCart /> Cart
+            <MdOutlineShoppingCart /> <span className={styles.navText}>Cart</span>
           </Link>
         </div>
       </div>

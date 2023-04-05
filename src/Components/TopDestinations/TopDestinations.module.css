@@ -45,9 +45,65 @@
   transform: translateY(-100%);
 }
 
+.slideText {
+  color: white;
+  position: absolute;
+  font-weight: bold;
+  font-size: 28px;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.rightTextBox {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightTextBox > h2 {
+  font-size: 32px;
+  margin: 5px 0;
+}
+
+.rightTextBox > p {
+  padding: 0 17%;
+}
+
+.rightTextBox > p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blackBtn {
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 23px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 10px 15px 14px;
+  display: flex;
+  transition: 0.2s;
+  margin-top: 15px;
+  width: max-content;
+}
+
+.blackBtn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.2s;
+}
+
+.leftTextBox {
+  width: 50%;
+}
+
 @media (min-width: 1024px) {
   .outer {
-    padding: 0 24px;
+    /* padding: 0 24px; */
   }
 }
 
@@ -64,17 +120,16 @@
 
 @media (max-width: 768px) {
   .outer {
-    width: 768px;
+    /* width: 768px; */
     padding: 0 10px;
   }
 }
 
-.slideText {
-  color: white;
-  position: absolute;
-  font-weight: bold;
-  font-size: 28px;
-  bottom: 10px;
-  left: 10px;
-  z-index: 2;
+@media (max-width: 900px) {
+  .rightTextBox {
+    width: 100%;
+  }
+  .leftTextBox {
+    width: 100%;
+  }
 }

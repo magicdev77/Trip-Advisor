@@ -1,8 +1,7 @@
 .container {
-  display: flex;
-  /* width: 90%; */
+
+  width: 90%;
   margin: auto;
-  justify-content: space-between;
 }
 
 .box {
@@ -24,7 +23,7 @@
 
 @media (min-width: 1024px) {
   .container {
-    padding: 20px 24px;
+    padding: 20px 0px;
   }
 }
 
@@ -39,9 +38,29 @@
   }
 }
 
+.container.topMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiperContainer {
+  display: none;
+}
+
+
+@media (max-width: 1200px) {
+  .container.topMenu {
+    display: none;
+  }
+
+  .swiperContainer {
+    display: block;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    width: 768px;
+    /* width: 768px; */
     padding: 0 10px;
   }
 }

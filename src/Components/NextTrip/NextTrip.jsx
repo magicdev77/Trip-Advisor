@@ -6,7 +6,7 @@ import styles from "./style.module.css";
 const NextTrip = () => {
   return (
     <div className={styles.container}>
-      <Box height="180px" bgColor="#FAF1ED">
+      <Box height="195px" bgColor="#FAF1ED"  className={styles.nextTripTop}>
         <Flex>
           <Text
             fontSize="30px"
@@ -25,7 +25,7 @@ const NextTrip = () => {
           <Spacer />
           <Box
             bgImage="url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f7/1d/4d/caption.jpg?w=1000&h=-1&s=1')"
-            height="180px"
+            height="195px"
             width="400px"
             bgPos="center"
           >
@@ -39,8 +39,28 @@ const NextTrip = () => {
         </Flex>
       </Box>
 
-      <Box bgColor="#F2B203" margin="48px 0" style={{ display: 'flex' }}>
-        <Box style={{ width: '50%' }}>
+      <div className={styles.nextTripBottom}>
+        <Text
+          fontSize="30px"
+          fontWeight="bold"
+          marginTop="50px"
+          marginLeft="10px"
+          color="white"
+          position="absolute"
+        >
+          Your next trip starts here
+          <Text fontSize="15px" fontWeight="normal">
+            Top-rated hotels that have earned the Best of the Best crown.
+          </Text>
+          <a className={styles.blackBtn}>
+            See The List
+          </a>
+        </Text>
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f7/1d/4d/caption.jpg?w=1000&h=-1&s=1" style={{ width: '100%' }} alt="" />
+      </div>
+
+      <Box bgColor="#F2B203" margin="80px 0" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <Box className={styles.leftTextBox}>
           <Img
             style={{ padding: '15px', width: '100%' }}
             src="caption.jpg" 
