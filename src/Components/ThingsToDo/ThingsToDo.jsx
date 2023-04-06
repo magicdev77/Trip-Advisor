@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // import SqrCard from "../Cards/SqrCard";
 import styles from "./ThingsToDo.module.css";
 
@@ -9,6 +10,8 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const ThingsToDo = ({ data }) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.outer}>
       <h2>Where to go, right now</h2>
@@ -17,9 +20,6 @@ const ThingsToDo = ({ data }) => {
         <Swiper
           slidesPerView={4}
           spaceBetween={10}
-          // pagination={{
-          //   clickable: true,
-          // }}
           navigation={true}
           className="mySwiper"
           breakpoints={{
@@ -38,7 +38,7 @@ const ThingsToDo = ({ data }) => {
           loop={false}
         >
           {data ? data.map((e) => (
-            <SwiperSlide key={e.id}>
+            <SwiperSlide key={e.id} onClick={() => {navigate(`/detailgotoinfo/${e.id}`)}} style={{ cursor: "pointer" }}>
               <div>
                 <span className={styles.slideText}>{ e.fields.Title }</span>
                 <img src={e.fields.Attachment[0].url} alt="TopdesAvatar" style={{ width: '100%' }} />

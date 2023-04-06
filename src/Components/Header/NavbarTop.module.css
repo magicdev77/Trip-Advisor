@@ -9,11 +9,11 @@
   padding: 8px 0px;
 }
 .container > div:nth-child(1) {
-  width: 17%;
-  padding-left:22px
+  width: 200px;
+  padding-left:0px;
 }
 .container > div:nth-child(2) {
-  width: 83%;
+  width: calc(100% - 200px);
   display: flex;
   justify-content: flex-end;
   gap: 8px;
@@ -63,7 +63,8 @@
   color: red;
 }
 .container > div img {
-  width: 100%;
+  max-width: 200px;
+  width: 200px;
 }
 
 @media (min-width: 1024px)
@@ -91,6 +92,16 @@
     padding: 8px 0px;
     width: calc(1136px + 24px * 2);
   }
+  .container > div:nth-child(1) {
+    padding-left: 22px;
+  }
+}
+
+@media (max-width: 1184px)
+{
+  .container > div:nth-child(2) {
+    padding-right: 0px;
+  }
 }
 
 @media (max-width: 768px)
@@ -98,5 +109,31 @@
   .container {
     /* width: 768px; */
     padding: 8px 10px;
+  }
+}
+
+@media (max-width: 672px) {
+  .container > div:nth-child(1) {
+    width: 45px;
+    padding-left:0px;
+    overflow: hidden;
+  }
+  .container > div:nth-child(2) {
+    width: calc(100% - 45px);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1px;
+    overflow: hidden;
+  } 
+  .container > div:nth-child(2) > div {
+    border-radius: 20px;
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container > div:nth-child(2) > div {
+    border-radius: 20px;
+    padding: 4px 2px 4px 6px;
   }
 }

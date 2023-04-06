@@ -123,6 +123,9 @@
     /* width: 768px; */
     padding: 0 10px;
   }
+  .slideText{
+    font-size: 20px !important;
+  }
 }
 
 @media (max-width: 900px) {

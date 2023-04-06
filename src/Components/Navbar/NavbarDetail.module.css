@@ -2,6 +2,7 @@
 
   width: 90%;
   margin: auto;
+  padding: 20px 0;
 }
 
 .box {
@@ -21,11 +22,11 @@
   background-color: black;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .container {
     padding: 20px 0px;
   }
-}
+} */
 
 @media (min-width: 1184px) {
   .container {
@@ -61,7 +62,7 @@
 @media (max-width: 768px) {
   .container {
     /* width: 768px; */
-    padding: 0 10px;
+    /* padding: 0 10px; */
   }
 }
 

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import styles from "./TopExperience.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
@@ -11,8 +11,7 @@ import ReactStars from "react-rating-stars-component";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 function TopExperience({ data }) {
-  console.log(data);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className={styles.outer}>
@@ -21,9 +20,6 @@ function TopExperience({ data }) {
         <Swiper
           slidesPerView={4}
           spaceBetween={10}
-          // pagination={{
-          //   clickable: true,
-          // }}
           navigation={true}
           className="mySwiper"
           breakpoints={{
@@ -45,10 +41,10 @@ function TopExperience({ data }) {
             data.map((e) => (
               <SwiperSlide
                 key={e.id}
-                onClick={() => {
-                  navigate(`/detailInfo/${e.id}`);
-                }}
-                style={{ cursor: "pointer" }}
+                // onClick={() => {
+                //   navigate(`/detailInfo/${e.id}`);
+                // }}
+                // style={{ cursor: "pointer" }}
               >
                 <div>
                   <span className={styles.heartBtn}>

@@ -41,14 +41,14 @@ const NextTrip = () => {
 
       <div className={styles.nextTripBottom}>
         <Text
-          fontSize="30px"
+          fontSize="25px"
           fontWeight="bold"
-          marginTop="50px"
+          // marginTop="50px"
           marginLeft="10px"
           color="white"
           position="absolute"
         >
-          Your next trip starts here
+          <span>Your next trip starts here</span>
           <Text fontSize="15px" fontWeight="normal">
             Top-rated hotels that have earned the Best of the Best crown.
           </Text>

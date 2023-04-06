@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  position: static;
+  top: 0px;
+  padding: 8px 0px;
+}

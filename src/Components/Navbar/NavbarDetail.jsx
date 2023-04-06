@@ -161,13 +161,16 @@ const NavbarDetail = () => {
           className="mySwiper"
           breakpoints={{
             0: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               // direction: 'vertical',
             },
-            768: {
+            498: {
+              slidesPerView: 2,
+            },
+            808: {
               slidesPerView: 3,
             },
-            1024: {
+            1082: {
               slidesPerView: 4,
               spaceBetween: 30,
             },

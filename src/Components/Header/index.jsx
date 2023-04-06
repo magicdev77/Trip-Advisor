@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "./NavbarTop.module.css";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { useContext } from "react";
-import { BiPencil, BiHeart, BiBell } from "react-icons/bi";
+import { BiPencil, BiHeart, BiBell, BiLock } from "react-icons/bi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Header = () => {
@@ -46,7 +46,7 @@ const Header = () => {
             <a
               style={{ textDecoration: "none", color: "white" }}
             >
-              Sign in
+              <BiLock /> <span className={styles.navText}>Sign in</span>
             </a>
           )}
         </div>

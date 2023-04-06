@@ -51,6 +51,8 @@
 
 .nextTripBottom {
   display: none;
+  overflow: hidden;
+  position: relative;
 }
 
 .leftTextBox {
