@@ -1,0 +1,102 @@
+.rightTextBox {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightTextBox > h2 {
+  font-size: 32px;
+  margin: 5px 0;
+}
+
+.rightTextBox > p {
+  padding: 0 16%;
+}
+
+.rightTextBox > p:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blackBtn {
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 23px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 10px 15px 14px;
+  display: flex;
+  transition: 0.2s;
+  margin-top: 15px;
+  width: max-content;
+}
+
+.blackBtn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.2s;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.nextTripTop {
+  display: block;
+}
+
+.nextTripBottom {
+  display: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.leftTextBox {
+  width: 50%;
+}
+
+@media (max-width: 1024px)
+{
+  .container {
+    padding: 0px 0px;
+  }
+  .nextTripTop {
+    display: none;
+  }
+  .nextTripBottom {
+    display: table;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1184px)
+{
+  .container {
+    padding: 0 24px;
+    box-sizing: border-box;
+    margin: auto;
+    max-width: 100%;
+    /* padding: 8px 0px; */
+    width: calc(1136px + 24px * 2);
+  }
+}
+
+@media (max-width: 768px)
+{
+  .container {
+    /* width: 768px; */
+    padding: 0 10px;
+  }
+}
+@media (max-width: 900px) {
+  .rightTextBox {
+    width: 100%;
+  }
+  .leftTextBox {
+    width: 100%
+  }
+}

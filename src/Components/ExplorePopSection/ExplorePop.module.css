@@ -1,0 +1,60 @@
+.outer {
+  width: 90%;
+  margin: auto;
+}
+
+@media (min-width: 1024px) {
+  .outer {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+@media (min-width: 1184px) {
+  .outer {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: calc(1136px + 0px * 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .outer {
+    /* width: 768px; */
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .slideText{
+    font-size: 20px !important;
+  }
+}
+
+.outer > p {
+  margin: -15px 0 10px 0;
+}
+.container {
+  margin-top: 32px;
+  display: flex;
+  gap: 23px;
+  overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.container .box {
+  min-width: 23%;
+}
+
+.slideText {
+  color: white;
+  position: absolute;
+  font-weight: bold;
+  font-size: 28px;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+}

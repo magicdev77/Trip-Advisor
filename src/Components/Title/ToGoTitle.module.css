@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  position: static;
+  top: 0px;
+  padding: 8px 0px;
+}
+
+.container > h1 {
+  font-size: 54px;
+}
+
+.titleStyle {
+  color: #ff5d5d;
+}
+
+@media (min-width: 1184px) {
+  .container {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: calc(1136px + 24px * 2);
+  }
+}

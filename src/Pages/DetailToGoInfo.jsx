@@ -7,6 +7,18 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer/FooterAllPage";
 import NavbarDetail from "../Components/Navbar/NavbarDetail";
 import ToGoTitle from "../Components/Title/ToGoTitle";
+import ImageDetailBox from "../Components/ImageDetailBox/ImageDetailBox";
+import About from "../Components/About/About";
+import EssentialDo from "../Components/EssentialDo/EssentialDo";
+import EssentialStay from "../Components/EssentialStay/EssentialStay";
+import EssentialEat from "../Components/EssentialEat/EssentialEat";
+import Itineraries from "../Components/ItinerariesSection/Itineraries";
+import NextTrip from "../Components/DetailNextTrip/NextTrip";
+import Dig from "../Components/DigSection/Dig";
+import ExploreSee from "../Components/ExploreSeeSection/ExploreSee";
+import ExplorePicture from "../Components/ExplorePictureSection/ExplorePicture";
+import ExplorePop from "../Components/ExplorePopSection/ExplorePop";
+import GetOutThere from "../Components/GetOutThereSection/GetOutThere";
 
 const DetailToGoInfo = () => {
   const path = window.location.pathname.split("/");
@@ -18,7 +30,6 @@ const DetailToGoInfo = () => {
     )
       .then((res) => res.json())
       .then((rows) => {
-        console.log(rows.records);
         rows.records.map((e) => {
           if (e.id === path[2]) {
             setSpecifyData(e);
@@ -36,6 +47,18 @@ const DetailToGoInfo = () => {
       <main>
         {specifyData && specifyData.fields && <ToGoTitle title={specifyData.fields.Title}/>}
         <NavbarDetail />
+        {specifyData && specifyData.fields && <ImageDetailBox data={specifyData}/>}
+        {specifyData && specifyData.fields && <About data={specifyData} />}
+        {specifyData && specifyData.fields && <EssentialDo data={specifyData} />}
+        {specifyData && specifyData.fields && <EssentialStay data={specifyData} />}
+        {specifyData && specifyData.fields && <EssentialEat data={specifyData} />}
+        {specifyData && specifyData.fields && <Itineraries data={specifyData} />}
+        <NextTrip />
+        {specifyData && specifyData.fields && <Dig data={specifyData} />}
+        {specifyData && specifyData.fields && <ExploreSee data={specifyData} />}
+        {specifyData && specifyData.fields && <ExplorePicture data={specifyData} />}
+        {specifyData && specifyData.fields && <ExplorePop data={specifyData} />}
+        <GetOutThere />
       </main>
       <Footer />
     </>

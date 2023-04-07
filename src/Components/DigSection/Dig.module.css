@@ -1,0 +1,108 @@
+.mainContainer {
+  padding: 15px 0 10px 0;
+  margin-bottom: 80px;
+}
+
+.subContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  overflow: scroll;
+  gap: 20px;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.box {
+  min-width: 30%;
+  min-height: 100%;
+  background-color: white;
+}
+
+.box>div {
+  text-align: center;
+}
+
+.box>div>img {
+  width: 100%;
+}
+
+.box>div>img:hover {
+  opacity: .8;
+}
+
+.box>div+div {
+  padding: 20px;
+  line-height: 2em;
+}
+
+.box>div+div p {
+  font-size: 1.1em;
+  color: black;
+  font-weight: 500;
+}
+
+.box>div+div p>span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.box>div+div p+p {
+  font-size: 1.2em;
+  color: black;
+  font-weight: 600;
+}
+
+.box>div+div p+p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (min-width: 1024px)
+{
+.subContainer {
+  /* padding: 0 24px; */
+}
+}
+
+@media (min-width: 1184px)
+{
+.subContainer {
+  /* padding: 0 24px; */
+  box-sizing: border-box;
+  /* margin: auto; */
+  max-width: 100%;
+  width: calc(1136px + 0px * 2);
+}
+}
+
+@media (max-width: 768px)
+{
+.subContainer {
+  /* width: 768px; */
+  /* padding: 0 10px; */
+}
+}
+
+.heartBtn {
+  color: black;
+  background-color: rgba(255, 255, 255, 1);
+  transition: 0.2s;
+  border-radius: 50%;
+  font-size: 18px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1;
+  padding: 10px 10px 5px 11px
+}
+
+.heartBtn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: 0.2s;
+}
