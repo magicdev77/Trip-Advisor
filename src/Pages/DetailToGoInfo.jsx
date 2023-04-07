@@ -41,6 +41,8 @@ const DetailToGoInfo = () => {
       });
   }, []);
 
+  console.log(specifyData);
+
   return (
     <>
       <Header />

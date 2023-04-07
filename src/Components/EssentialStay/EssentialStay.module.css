@@ -84,6 +84,22 @@
   }
 }
 
+@media (max-width: 620px) {
+  .leftTextGroup {
+    width: 100%;
+  }
+  .swiperArea {
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    gap: 10px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+}
+
 .slideText {
   margin: 5px 0;
   color: black;

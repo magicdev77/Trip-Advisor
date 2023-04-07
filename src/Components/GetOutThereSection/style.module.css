@@ -47,9 +47,12 @@
 
 .nextTripTop {
   display: block;
+  margin: 80px 0;
 }
 
 .nextTripBottom {
+  margin-top: 80px !important;
+  margin-bottom: 80px !important;
   display: none;
   overflow: hidden;
   position: relative;

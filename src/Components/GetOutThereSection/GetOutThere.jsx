@@ -6,7 +6,7 @@ import styles from "./style.module.css";
 const GetOutThere = () => {
   return (
     <div className={styles.container}>
-      <Box height="195px" bgColor="#FAF1ED" margin="80px 0" className={styles.nextTripTop}>
+      <Box height="195px" bgColor="#FAF1ED" className={styles.nextTripTop}>
         <Flex>
           <Text
             fontSize="30px"

@@ -3,12 +3,18 @@ import styles from "./About.module.css";
 
 const About = ({ data }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.layout}>
-        <h1 className={styles.title}>About {data.fields.Title}</h1>
-        <div className={styles.text}>{data.fields.About}</div>
-      </div>
-    </div>
+    <>
+      {data.fields.About ? (
+        <div className={styles.container}>
+          <div className={styles.layout}>
+            <h1 className={styles.title}>About {data.fields.Title}</h1>
+            <div className={styles.text}>{data.fields.About}</div>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
