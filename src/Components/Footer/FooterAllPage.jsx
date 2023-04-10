@@ -17,7 +17,7 @@ import styles from "./FooterAllPage.module.css";
 // import { BsTwitter } from "react-icons/bs";
 // import { GrPinterest, GrInstagram } from "react-icons/gr";
 
-const Footer = () => {
+const FooterAllPage = () => {
   return (
     <div>
       <Box bgColor={"#FAF1ED"} className={styles.desktopShow}>
@@ -348,4 +348,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterAllPage;

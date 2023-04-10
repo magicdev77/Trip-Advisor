@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Footer from "../Components/Footer/FooterAllPage";
+import FooterAllPage from "../Components/Footer/FooterAllPage";
 // import Trending from "../Components/Trending/Trending";
 import MoreToExplore from "../Components/MoreToExplore/MoreToExplore";
 import TopDestinations from "../Components/TopDestinations/TopDestinations";
@@ -67,7 +67,7 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <NavbarDetail />
+        <NavbarDetail place={""}/>
         <Search />
         <ThingsToDo data={toGoData} />
         <TopExperience data={topExperienceData} />
@@ -76,7 +76,7 @@ const Home = () => {
         <TopDestinations data={topDestinationData} />
         <img src={img1} style={{ width: "100%" }} />
       </main>
-      <Footer />
+      <FooterAllPage />
     </>
   );
 };

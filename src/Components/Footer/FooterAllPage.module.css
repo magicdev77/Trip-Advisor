@@ -88,6 +88,10 @@
   .mobileShow {
     display: block;
   }
+
+  .Container:last-child > div:first-child > div {
+    display: none;
+  }
 }
 
 .Container {
@@ -180,3 +184,11 @@
   font-size: 16px;
   line-height: 20px;
 }
+
+.desktopOtherShow {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+

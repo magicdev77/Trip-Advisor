@@ -2,9 +2,10 @@
 /* eslint-disable array-callback-return */
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 import Header from "../Components/Header";
-import Footer from "../Components/Footer/FooterAllPage";
+import FooterAllImage from "../Components/Footer/FooterAllPage";
 import NavbarDetail from "../Components/Navbar/NavbarDetail";
 import ToGoTitle from "../Components/Title/ToGoTitle";
 import ImageDetailBox from "../Components/ImageDetailBox/ImageDetailBox";
@@ -21,7 +22,7 @@ import ExplorePop from "../Components/ExplorePopSection/ExplorePop";
 import GetOutThere from "../Components/GetOutThereSection/GetOutThere";
 
 const DetailToGoInfo = () => {
-  const path = window.location.pathname.split("/");
+  const { userId } = useParams();
   const [specifyData, setSpecifyData] = useState({});
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const DetailToGoInfo = () => {
       .then((res) => res.json())
       .then((rows) => {
         rows.records.map((e) => {
-          if (e.id === path[2]) {
+          if (e.id === userId) {
             setSpecifyData(e);
           }
         });
@@ -41,14 +42,12 @@ const DetailToGoInfo = () => {
       });
   }, []);
 
-  console.log(specifyData);
-
   return (
     <>
       <Header />
       <main>
         {specifyData && specifyData.fields && <ToGoTitle title={specifyData.fields.Title}/>}
-        <NavbarDetail />
+        {specifyData && specifyData.fields && <NavbarDetail place={specifyData.fields.country}/>}
         {specifyData && specifyData.fields && <ImageDetailBox data={specifyData}/>}
         {specifyData && specifyData.fields && <About data={specifyData} />}
         {specifyData && specifyData.fields && <EssentialDo data={specifyData} />}
@@ -62,7 +61,7 @@ const DetailToGoInfo = () => {
         {specifyData && specifyData.fields && <ExplorePop data={specifyData} />}
         <GetOutThere />
       </main>
-      <Footer />
+      <FooterAllImage />
     </>
   );
 };
