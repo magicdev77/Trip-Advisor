@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import styles from "./FooterAllPage.module.css";
+import classnames from 'classnames';
 // import { FaFacebook } from "react-icons/fa";
 // import { BsTwitter } from "react-icons/bs";
 // import { GrPinterest, GrInstagram } from "react-icons/gr";
@@ -15,7 +16,7 @@ import styles from "./FooterAllPage.module.css";
 const Footer = () => {
   return (
     <div>
-      <Box bgColor={"#FAF1ED"} className={styles.desktopOtherShow}>
+      <Box bgColor={"#FAF1ED"} className={classnames(styles.desktopShow, styles.Fixed)}>
         <Box className={styles.Container}>
           <Box>
             <Flex alignItems={"center"} justifyContent={"flex-start"}>
@@ -89,7 +90,7 @@ const Footer = () => {
           </Box>
         </Box>
       </Box>
-      <Box bgColor={"#FAF1ED"} className={styles.mobileShow}>
+      <Box bgColor={"#FAF1ED"} className={classnames(styles.mobileShow, styles.Fixed)}>
         <Box className={styles.Container}>
           <Box>
             <Flex

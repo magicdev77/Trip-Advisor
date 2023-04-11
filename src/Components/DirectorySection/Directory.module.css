@@ -1,7 +1,7 @@
 .container {
   display: flex;
   gap: 10px;
-  margin-bottom: 109px;
+  margin-bottom: 136px;
 }
 
 .cover_image {
@@ -10,12 +10,13 @@
   background-repeat: no-repeat;
   background-position: center center;
   width: 100%;
-  height: calc(100% - 95px);
+  height: calc(100% - 135px);
 }
 
 .slideItem {
   width: calc((1136px + 20px * 2 - 80px) / 5 );
-  height: calc((1136px + 20px * 2 - 80px) / 5 + 95px);
+  height: calc((1136px + 20px * 2 - 80px) / 5 + 115px);
+  position: relative;
 }
 
 .slideGrid {
@@ -26,56 +27,29 @@
   padding: 20px;
 }
 
-
-
-/* @media (max-width: 1300px) {
-  .slideItem {
-    width: calc((100vw - 100px) / 4 );
-    height: calc((100vw - 100px) / 4 + 95px);
-  }
-}
-
-@media (max-width: 1000px) {
-  .slideItem {
-    width: calc((100vw - 80px) / 3 );
-    height: calc((100vw - 80px) / 3 + 95px);
-  }
-}
-
-@media (max-width: 768px) {
-  .slideGrid {
-    justify-content: space-between;
-    gap: 0;
-  }
-  .slideItem {
-    width: calc((100vw - 80px) / 2 );
-    height: calc((100vw - 80px) / 2 + 95px);
-  }
-}
-
-@media (max-width: 408px) {
-  .slideGrid {
-    justify-content: space-between;
-    gap: 0;
-  }
-  .slideItem {
-    width: calc((100vw - 40px) / 1 );
-    height: calc((100vw - 40px) / 1 + 95px);
-  }
-} */
-
 .slideItem > div > div:first-child > span {
   display: block;
   height: 42px;
 }
 
+.heartBtn {
+  display: block;
+  fill: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 10px 10px 5px 11px
+}
 
 @media (min-width: 1184px) {
   .container {
     /* padding: 0 24px; */
     box-sizing: border-box;
     margin: auto;
-    margin-bottom: 109px;
+    margin-bottom: 136px;
     max-width: 100%;
     width: calc(1136px + 20px * 2) !important;
   }
@@ -114,7 +88,7 @@
 @media (max-width: 768px) {
   .container {
     width: calc(90% + 40px);
-    margin-bottom: 109px;
+    margin-bottom: 136px;
     margin: auto;
   }
 }
@@ -123,6 +97,10 @@
   .slideItem {
     width: 47%;
     height: calc((100vw + 20px * 2) / 2);
+  }
+  .container {
+    width: calc(90% + 40px);
+    margin-bottom: 136px;
   }
 }
 
@@ -137,6 +115,6 @@
   .container {
     width: calc(90% + 40px);
     margin: auto;
-    margin-bottom: 109px;
+    margin-bottom: 136px;
   }
 }

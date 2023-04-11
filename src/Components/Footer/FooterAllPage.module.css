@@ -88,10 +88,6 @@
   .mobileShow {
     display: block;
   }
-
-  .Container:last-child > div:first-child > div {
-    display: none;
-  }
 }
 
 .Container {
@@ -185,10 +181,9 @@
   line-height: 20px;
 }
 
-.desktopOtherShow {
+.Fixed {
   position: fixed;
   bottom: 0;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
-
