@@ -63,7 +63,7 @@
   }
 
   .Container:last-child > div:last-child {
-    padding-top: 20px;
+    padding-top: 4px;
   }
 
   .Container:last-child > div:first-child > div {
@@ -95,7 +95,7 @@
   margin: auto;
   display: flex;
   line-height: 0.9em;
-  padding: 30px 0px;
+  padding: 4px 0px;
 }
 
 .Container li{
@@ -186,4 +186,5 @@
   bottom: 0;
   overflow: hidden;
   width: 100%;
+  z-index: 100;
 }

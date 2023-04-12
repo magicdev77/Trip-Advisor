@@ -5,6 +5,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer/Footer";
 import DirectorySection from "../Components/DirectorySection/Directory";
 import NavbarDetail from "../Components/Navbar/NavbarDetail";
+import Filter from "../Components/Filter/Filter";
 
 const Directory = () => {
   const [viewData,setViewData] = useState([]);
@@ -38,8 +39,11 @@ const Directory = () => {
 
   return (
     <>
-      <Header />
-      <NavbarDetail place={""}/>
+      <div style={{ position: 'sticky', top: '0', zIndex: '100', background: 'white', boxShadow: '0px 0px 4px #333' }}>
+        <Header />
+        <NavbarDetail place={""}/>
+        <Filter />
+      </div>
       <main>
         {viewData && <DirectorySection data={viewData}/>}
       </main>
