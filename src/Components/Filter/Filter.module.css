@@ -76,3 +76,25 @@
     width: 90%;
   }
 }
+
+.filterBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterBox > div {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  margin: 0 10px;
+}
+
+.filterDropBox {
+  width: 530px;
+  margin: auto;
+}
+
+.filterDropBox > div{
+  width: 100%;
+}
