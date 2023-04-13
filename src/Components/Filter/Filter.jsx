@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
-import { BiFilter } from "react-icons/bi";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
@@ -48,7 +48,7 @@ const Filter = ({ option, data }) => {
       });
       setMaxPrice(max);
       setMinPrice(min);
-      setAvePrice(parseInt(sum / data.length * 100) / 100);
+      setAvePrice(parseInt((sum / data.length) * 100) / 100);
     }
   }, [data]);
 
@@ -57,7 +57,19 @@ const Filter = ({ option, data }) => {
     navigate(
       `/directory/?option=${option}&place=${
         selectedCountry ? selectedCountry.name : "all"
-      }&minPrice=${currentMinPrice === 0 ? minPrice : currentMinPrice}&maxPrice=${currentMaxPrice === 0 ? maxPrice : currentMaxPrice}`
+      }&minPrice=${
+        currentMinPrice === 0 ? minPrice : currentMinPrice
+      }&maxPrice=${currentMaxPrice === 0 ? maxPrice : currentMaxPrice}`
+    );
+  };
+
+  const handleRefreshClick = () => {
+    setCurrentMinPrice(minPrice);
+    setCurrentMaxPrice(maxPrice);
+    setSelectedCountry(null);
+    setVisible(false);
+    navigate(
+      `/directory/?option=${option}&place=all`
     );
   };
 
@@ -76,7 +88,10 @@ const Filter = ({ option, data }) => {
         </div>
       </div>
       <button className={styles.filterBtn} onClick={() => setVisible(true)}>
-        <BiFilter />
+        <i
+          className="pi pi-sliders-h"
+          style={{ fontSize: "12px", marginRight: "5px" }}
+        ></i>
         <span>Filters</span>
       </button>
       <Dialog
@@ -84,9 +99,17 @@ const Filter = ({ option, data }) => {
         footer={
           <div className="w-full">
             <Button
+              label="Refresh"
+              icon="pi pi-refresh"
+              size="small"
+              style={{ float: "left" }}
+              onClick={handleRefreshClick}
+            />
+            <Button
               label="Ok"
               icon="pi pi-check"
               size="small"
+              style={{}}
               onClick={handleOkClick}
             />
             <Button

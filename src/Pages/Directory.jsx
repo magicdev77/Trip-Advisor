@@ -24,31 +24,9 @@ const Directory = () => {
     )
       .then((res) => res.json())
       .then((rows) => {
+        data = rows.records.filter((e) => ((option !== null ? e.fields.style === option : true) && (place !== 'all' ? e.fields.country === place : true) && (minPrice !== null ? e.fields.price >= minPrice : true) && (maxPrice !==null ? e.fields.price <= maxPrice : true)));
+        
         setRealData(rows.records);
-        // rows.records.map((e) => {
-        //   if (place === 'all' && e.fields.style === option) {
-        //     data.push(e);
-        //   } else if (e.fields.country === place && e.fields.style === option) {
-        //     data.push(e);
-        //   }
-        // });
-        if (minPrice === null && maxPrice === null && place === 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option));
-        } else if (minPrice === null && maxPrice === null && place !== 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.country === place));
-        } else if (minPrice === null && maxPrice !== null && place === 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.price <= maxPrice));
-        } else if (minPrice === null && maxPrice !== null && place !== 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.country === place && e.fields.price <= maxPrice));
-        } else if (minPrice !== null && maxPrice === null && place === 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.price >= minPrice));
-        } else if (minPrice !== null && maxPrice === null && place !== 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.country === place && e.fields.price >= minPrice));
-        } else if (minPrice !== null && maxPrice !== null && place === 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.price >= minPrice && e.fields.price <= maxPrice));
-        } else if (minPrice !== null && maxPrice !== null && place !== 'all') {
-          data = rows.records.filter((e) => (e.fields.style === option && e.fields.country === place && e.fields.price >= minPrice && e.fields.price <= maxPrice));
-        } 
         setViewData(data);
       })
       .catch((error) => {

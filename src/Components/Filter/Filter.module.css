@@ -48,6 +48,9 @@
 }
 
 .filterBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border: 1px solid #333;
   background-color: white;
   border-radius: 8px;
@@ -91,7 +94,7 @@
 }
 
 .filterDropBox {
-  width: 530px;
+  width: 550px;
   margin: auto;
 }
 
