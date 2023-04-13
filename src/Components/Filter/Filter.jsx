@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/* eslint-disable array-callback-return */
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
 import { BiFilter } from "react-icons/bi";
 import { Dialog } from "primereact/dialog";
@@ -9,27 +11,55 @@ import { Dropdown } from "primereact/dropdown";
 import styles from "./Filter.module.css";
 
 const cities = [
-  { name: 'United States', code: 'United States' },
-  { name: 'Japan', code: 'Japan' },
-  { name: 'United Kingdom', code: 'United Kingdom' },
-  { name: 'Australia', code: 'Australia' },
-  { name: 'Mexico', code: 'Mexico' },
-  { name: 'Iceland', code: 'Iceland' }
+  { name: "United States", code: "United States" },
+  { name: "Japan", code: "Japan" },
+  { name: "United Kingdom", code: "United Kingdom" },
+  { name: "Australia", code: "Australia" },
+  { name: "Mexico", code: "Mexico" },
+  { name: "Iceland", code: "Iceland" },
 ];
 
-const Filter = () => {
+const Filter = ({ option, data }) => {
+  const navigate = useNavigate();
+
   const [visible, setVisible] = useState(false);
-  const [currency1, setCurrency1] = useState(0);
-  const [currency2, setCurrency2] = useState(0);
-  const [selectedCity, setSelectedCity] = useState(null);
+  const [minPrice, setMinPrice] = useState(0);
+  const [currentMinPrice, setCurrentMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [currentMaxPrice, setCurrentMaxPrice] = useState(0);
+  const [avePrice, setAvePrice] = useState(0);
+  const [selectedCountry, setSelectedCountry] = useState(null);
 
-  // const handleOpenModal = () => {
-  //   setIsOpen(true);
-  // };
+  useEffect(() => {
+    if (data.length) {
+      let max = data[0].fields.price;
+      let min = data[0].fields.price;
+      let sum = 0;
+      data.map((e) => {
+        if (e.fields.price > max) {
+          max = e.fields.price;
+        }
 
-  // const handleCloseModal = () => {
-  //   setIsOpen(false);
-  // };
+        if (e.fields.price < min) {
+          min = e.fields.price;
+        }
+
+        sum = sum + e.fields.price;
+      });
+      setMaxPrice(max);
+      setMinPrice(min);
+      setAvePrice(parseInt(sum / data.length * 100) / 100);
+    }
+  }, [data]);
+
+  const handleOkClick = () => {
+    setVisible(false);
+    navigate(
+      `/directory/?option=${option}&place=${
+        selectedCountry ? selectedCountry.name : "all"
+      }&minPrice=${currentMinPrice === 0 ? minPrice : currentMinPrice}&maxPrice=${currentMaxPrice === 0 ? maxPrice : currentMaxPrice}`
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -57,7 +87,7 @@ const Filter = () => {
               label="Ok"
               icon="pi pi-check"
               size="small"
-              onClick={() => setVisible(false)}
+              onClick={handleOkClick}
             />
             <Button
               label="Cancel"
@@ -72,19 +102,19 @@ const Filter = () => {
         onHide={() => setVisible(false)}
       >
         <h3>Price range</h3>
-        <p>The average price per night is 177$</p>
+        <p>The average price per night is ${avePrice}$</p>
         <div className={styles.filterBox}>
           <InputNumber
-            value={currency1}
-            onValueChange={(e) => setCurrency1(e.value)}
+            value={currentMinPrice !== 0 ? currentMinPrice : minPrice}
+            onValueChange={(e) => setCurrentMinPrice(e.value)}
             showButtons
             mode="currency"
             currency="USD"
           />
           <div />
           <InputNumber
-            value={currency2}
-            onValueChange={(e) => setCurrency2(e.value)}
+            value={currentMaxPrice !== 0 ? currentMaxPrice : maxPrice}
+            onValueChange={(e) => setCurrentMaxPrice(e.value)}
             showButtons
             mode="currency"
             currency="USD"
@@ -93,13 +123,13 @@ const Filter = () => {
         <h3>Country</h3>
         <div className={styles.filterDropBox}>
           <Dropdown
-            value={selectedCity}
+            value={selectedCountry}
             options={cities}
             optionLabel="name"
             editable
             showClear
             placeholder="Select a Country"
-            onChange={(e) => setSelectedCity(e.value)}
+            onChange={(e) => setSelectedCountry(e.value)}
           />
         </div>
       </Dialog>
